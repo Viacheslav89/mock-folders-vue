@@ -20,7 +20,7 @@
       v-if="folder.children"
       v-for="folderChild of folder.children"
       :key="folderChild.id"
-      class="folder__list"
+      class="folder__children-list"
     >
       <li class="folder__children-item" v-if="isOpen">
         <AppFolder :folder="folderChild" />
@@ -86,7 +86,7 @@ const toggleFocusedFolder = (folderId: number) => {
     background-color: rgb(229, 145, 191);
   }
 
-  &__list {
+  &__children-list {
     margin-left: 30px;
     margin-top: 10px;
     margin: 0;
