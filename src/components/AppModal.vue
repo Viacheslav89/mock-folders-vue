@@ -53,10 +53,9 @@ const selectFolder = (focusedFolder: number | null) => {
 <style scoped lang="scss">
 .modal {
   width: 700px;
-  min-height: 560px;
   border: 1px solid black;
   border-radius: 20px;
-  margin: 60px auto 0 auto;
+  margin: 40px auto 0 auto;
 }
 
 .header {
@@ -68,7 +67,7 @@ const selectFolder = (focusedFolder: number | null) => {
 
 .main {
   width: 600px;
-  margin: 30px auto 30px auto;
+  margin: 20px auto 30px auto;
   min-height: 400px;
 
   &__list {
@@ -77,7 +76,7 @@ const selectFolder = (focusedFolder: number | null) => {
 
   &__item {
     list-style: none;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 }
 
@@ -100,6 +99,8 @@ const selectFolder = (focusedFolder: number | null) => {
 @media screen and (max-width: 570px) {
   .modal {
     width: 350px;
+    min-height: 350px;
+    margin-top: 10px;
 
     .header {
       &__title {
@@ -110,6 +111,12 @@ const selectFolder = (focusedFolder: number | null) => {
     .main {
       width: 320px;
       font-size: 13px;
+      margin: 0 auto 0 auto;
+
+
+      &__item {
+        margin-bottom: 30px;
+      }
     }
 
     .footer {

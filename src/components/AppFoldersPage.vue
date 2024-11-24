@@ -11,7 +11,7 @@
       :mockFolders="mockFolders"
     />
     <p class="folders__info-checked" v-if="focusedFolderId">
-      Идентификатор выбранной папки: 
+      Идентификатор выбранной папки:
       <span class="folders__checked-id">{{ focusedFolderId }}</span>
     </p>
   </div>
@@ -56,10 +56,13 @@ const setFocusedFolderId = (focusedFolder: number | null) => {
   }
 
   &__info-checked {
-    width: 330px;
-    margin: 0 auto;
+    text-align: center;
     font-size: 20px;
     margin-top: 40px;
+  }
+
+  &__checked-id {
+    color: rgb(226, 111, 174);
   }
 }
 
@@ -67,20 +70,21 @@ const setFocusedFolderId = (focusedFolder: number | null) => {
   .folders {
     width: 350px;
 
+
     &__button {
       width: 150px;
       font-size: 15px;
     }
 
     &__info-checked {
-      width: 285px;
-      font-size: 17px;
+      font-size: 16px;
+      margin-top: 20px;
+
     }
 
     &__checked-id {
       font-size: 18px;
       font-weight: bold;
-      color: rgb(226, 111, 174);
     }
   }
 }
