@@ -7,14 +7,16 @@
     <main class="main">
       <ul class="main__list">
         <li class="main__item" v-for="folder of mockFolders" :key="folder.id">
-          <AppFolder :folder="folder"/>
+          <AppFolder :folder="folder" />
         </li>
       </ul>
     </main>
 
     <footer class="footer">
       <div class="footer__button--wrapper">
-        <button class="footer__button">Ок</button>
+        <button class="footer__button" @click="selectFolder(focusedFolder)">
+          Ок
+        </button>
         <button class="footer__button" @click="closeModal">Закрыть</button>
       </div>
     </footer>
@@ -23,20 +25,28 @@
 
 <script setup lang="ts">
 import type { Folder } from "./../type";
-import { ref } from "vue";
 import AppFolder from "./AppFolder.vue";
+import { ref } from "vue";
+import { useFolders } from "@/composables/useFolders";
 
-const props = defineProps<{
+const { focusedFolder } = useFolders();
+
+defineProps<{
   titleModal: string;
   mockFolders: Folder[];
 }>();
 
 const emit = defineEmits<{
   (e: "closeModal"): void;
+  (e: "selectFolder", focusedFolder: number | null): void;
 }>();
 
 const closeModal = () => {
   emit("closeModal");
+};
+
+const selectFolder = (focusedFolder: number | null) => {
+  emit("selectFolder", focusedFolder);
 };
 </script>
 
@@ -46,7 +56,7 @@ const closeModal = () => {
   min-height: 560px;
   border: 1px solid black;
   border-radius: 20px;
-  margin: 100px auto 0 auto;
+  margin: 60px auto 0 auto;
 }
 
 .header {
@@ -83,6 +93,7 @@ const closeModal = () => {
     width: 120px;
     height: 30px;
     border-radius: 13px;
+    background-color: #d2d2d6;
   }
 }
 </style>

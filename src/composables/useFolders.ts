@@ -1,4 +1,7 @@
 import type { Folder } from "./../type";
+import { ref } from "vue";
+
+const focusedFolder = ref<null | number>(null);
 
 export const useFolders = () => {
   const mockFolders: Folder[] = [
@@ -30,15 +33,15 @@ export const useFolders = () => {
     },
 
     {
-      id: 9,
+      id: 10,
       name: "Папка 3",
       children: [
         {
-          id: 10,
+          id: 11,
           name: "Папка 3.1",
           children: [
             {
-              id: 11,
+              id: 12,
               name: "Папка 3.1.1",
               children: [],
             },
@@ -50,5 +53,6 @@ export const useFolders = () => {
 
   return {
     mockFolders,
+    focusedFolder,
   };
 };
