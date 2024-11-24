@@ -61,4 +61,17 @@ const setFocusedFolderId = (focusedFolder: number | null) => {
     margin-top: 40px;
   }
 }
+
+@media screen and (max-width: 570px) {
+  .folders {
+    width: 350px;
+
+
+    &__button {
+      width: 150px;
+      font-size: 15px;
+
+    }
+  }
+}
 </style>

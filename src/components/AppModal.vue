@@ -68,7 +68,7 @@ const selectFolder = (focusedFolder: number | null) => {
 
 .main {
   width: 600px;
-  margin: 0 auto 30px auto;
+  margin: 30px auto 30px auto;
   min-height: 400px;
 
   &__list {
@@ -94,6 +94,35 @@ const selectFolder = (focusedFolder: number | null) => {
     height: 30px;
     border-radius: 13px;
     background-color: #d2d2d6;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .modal {
+    width: 350px;
+
+    .header {
+      &__title {
+        font-size: 20px;
+      }
+    }
+
+    .main {
+      width: 320px;
+      font-size: 13px;
+    }
+
+    .footer {
+      &__button--wrapper {
+        width: 165px;
+      }
+
+      &__button {
+        width: 80px;
+        height: 28px;
+        border-radius: 12px;
+      }
+    }
   }
 }
 </style>
