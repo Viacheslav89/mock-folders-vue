@@ -66,11 +66,14 @@ const setFocusedFolderId = (focusedFolder: number | null) => {
   .folders {
     width: 350px;
 
-
     &__button {
       width: 150px;
       font-size: 15px;
+    }
 
+    &__checked-id {
+      width: 285px;
+      font-size: 17px;
     }
   }
 }
